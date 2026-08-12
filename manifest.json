@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Mokahr Resume Autofill",
+  "version": "0.7.0",
+  "description": "Locally store a resume profile and fill Mokahr/Feishu job application forms.",
+  "permissions": ["storage", "unlimitedStorage", "downloads"],
+  "host_permissions": [
+    "https://*.jobs.feishu.cn/*",
+    "https://jobs.feishu.cn/*",
+    "https://*.mokahr.com/*",
+    "https://mokahr.com/*"
+  ],
+  "action": {
+    "default_title": "Mokahr Resume Autofill",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.jobs.feishu.cn/*",
+        "https://jobs.feishu.cn/*",
+        "https://*.mokahr.com/*",
+        "https://mokahr.com/*"
+      ],
+      "js": ["lib/core.js", "lib/profile-schema.js", "content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}

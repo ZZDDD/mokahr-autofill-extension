@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mokahr 简历 JSON"
+  short_description: "从自然语言或 PDF 生成可导入扩展的简历 JSON"
+  default_prompt: "Use $mokahr-profile-json to convert my resume text or PDF into a validated Mokahr profile JSON."

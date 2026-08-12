@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mokahr 自动填充</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="popup-page">
+  <main class="popup-shell">
+    <header>
+      <p class="eyebrow">MOKAHR AUTOFILL</p>
+      <h1>简历自动填充</h1>
+      <p id="page-status" class="muted">正在检查当前页面…</p>
+    </header>
+    <button id="fill" class="primary" type="button">填充当前页面</button>
+    <button id="capture" class="secondary" type="button">从当前页面更新资料</button>
+    <button id="settings" class="link-button" type="button">管理资料与附件</button>
+    <div id="result" class="result" role="status" aria-live="polite"></div>
+    <p class="safety">只填充，不会提交申请。</p>
+  </main>
+  <script src="lib/core.js"></script>
+  <script src="lib/profile-schema.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

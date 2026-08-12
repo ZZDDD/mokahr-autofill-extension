@@ -1,0 +1,27 @@
+node_modules/
+coverage/
+.DS_Store
+.env
+.env.*
+
+# Local resume data and browser snapshots must never be committed.
+resume-profile.json
+mokahr-profile.json
+mokahr-profile-*.json
+profile*.json
+!examples/profile.example.json
+*resume*.json
+*简历*.json
+*.webarchive
+*.mhtml
+*.har
+*投递简历*.html
+*申请*.html
+*resume*.html
+*.pdf
+*.doc
+*.docx
+*.ppt
+*.pptx
+private/
+local-data/

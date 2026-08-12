@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "basic": {
+    "name": "示例用户",
+    "mobile": "",
+    "email": "",
+    "gender": "",
+    "currentCity": "示例城市",
+    "expectedLocation": "示例城市"
+  },
+  "education": [
+    {
+      "school": "示例大学",
+      "degree": "本科",
+      "major": "计算机科学",
+      "startDate": "2022-09",
+      "endDate": "2026-06"
+    }
+  ],
+  "work": [],
+  "internship": [],
+  "projects": [
+    {
+      "nameOfItem": "示例项目",
+      "role": "开发者",
+      "startDate": "2025-01",
+      "endDate": "2025-06",
+      "link": "https://example.com/project",
+      "description": "说明项目目标、个人贡献和可量化结果。"
+    }
+  ],
+  "works": [],
+  "awards": [],
+  "languages": [],
+  "selfEvaluation": "",
+  "social": [],
+  "custom": {}
+}

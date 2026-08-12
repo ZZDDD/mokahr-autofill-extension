@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>管理 Mokahr 自动填充资料</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="options-page">
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">MOKAHR AUTOFILL</p>
+      <h1>我的简历</h1>
+    </div>
+    <div class="top-actions">
+      <button id="import" class="secondary" type="button">导入 JSON</button>
+      <button id="export" class="secondary" type="button">导出 JSON</button>
+      <button id="save" class="primary" type="button">保存简历</button>
+      <input id="import-file" type="file" accept="application/json,.json" hidden>
+    </div>
+  </header>
+
+  <main class="settings-shell">
+    <nav class="sidebar" aria-label="简历章节">
+      <a href="#resume-status">简历状态</a>
+      <a href="#basic">基本信息</a>
+      <a href="#attachment">附件简历</a>
+      <div id="repeat-nav"></div>
+      <a href="#other">其他资料</a>
+      <a href="#data-tools">JSON 数据</a>
+    </nav>
+
+    <form id="profile-form" class="settings-content">
+      <section id="resume-status" class="settings-section status-section">
+        <div class="section-heading">
+          <div>
+            <h2>简历状态</h2>
+            <p id="save-state" class="section-intro">正在读取本地简历…</p>
+          </div>
+          <span id="revision-badge" class="status-badge">版本 0</span>
+        </div>
+        <dl class="status-grid">
+          <div><dt>内部存储位置</dt><dd><code>chrome.storage.local / profile</code></dd></div>
+          <div><dt>上次保存</dt><dd id="last-saved">尚未保存</dd></div>
+          <div><dt>最近更新方式</dt><dd id="last-method">-</dd></div>
+          <div><dt>附件简历</dt><dd id="status-attachment">未保存</dd></div>
+          <div><dt>最近导入</dt><dd id="last-import">无记录</dd></div>
+          <div><dt>最近导出</dt><dd id="last-export">无记录</dd></div>
+          <div class="status-wide"><dt>最近页面来源</dt><dd id="last-source">无反向更新记录</dd></div>
+          <div class="status-wide"><dt>已保存条目</dt><dd id="section-counts">暂无经历条目</dd></div>
+        </dl>
+        <div id="operation-receipt" class="operation-receipt" role="status" aria-live="polite" hidden>
+          <strong id="receipt-title"></strong>
+          <span id="receipt-detail"></span>
+        </div>
+        <label class="path-field">JSON 文件路径（可选）
+          <input id="profile-json-path" name="profileJsonPath" placeholder="例如：/Users/name/Documents/mokahr-profile.json">
+          <span class="field-help">浏览器不会提供导入文件的完整路径。这里可记录你自己维护的 JSON 位置；导出完成后会自动更新为实际保存路径。</span>
+        </label>
+      </section>
+
+      <section id="basic" class="settings-section">
+        <div class="section-heading">
+          <div>
+            <h2>基本信息</h2>
+            <p class="section-intro">不同招聘页面只会使用其中实际存在的字段。</p>
+          </div>
+        </div>
+        <div id="basic-fields" class="form-grid"></div>
+      </section>
+
+      <section id="attachment" class="settings-section">
+        <div class="section-heading"><h2>附件简历</h2></div>
+        <div class="file-row">
+          <label class="file-picker">选择附件<input id="attachment-file" type="file" accept=".pdf,.doc,.docx,.ppt,.pptx,.png,.jpg,.jpeg,.html"></label>
+          <span id="attachment-name" class="muted">尚未保存附件</span>
+          <button id="remove-attachment" class="danger-link" type="button">移除</button>
+        </div>
+        <p class="hint">附件保存在扩展的本地隔离存储中，填充时才交给当前招聘页面；JSON 导出不包含附件。</p>
+      </section>
+
+      <div id="repeat-sections"></div>
+
+      <section id="other" class="settings-section">
+        <div class="section-heading"><h2>其他资料</h2></div>
+        <label class="full-label">自我评价<textarea name="selfEvaluation" rows="7" placeholder="填写与岗位相关的优势、经验和职业方向"></textarea></label>
+        <div class="subsection-heading">
+          <div>
+            <h3>自定义字段</h3>
+            <p>用于公司自行添加、但扩展尚未内置的字段。</p>
+          </div>
+          <button id="add-custom" class="secondary small-button" type="button">添加字段</button>
+        </div>
+        <div id="custom-fields" class="custom-fields"></div>
+      </section>
+
+      <section id="data-tools" class="settings-section">
+        <details class="json-details">
+          <summary>JSON 数据预览</summary>
+          <div class="json-tools">
+            <p class="hint">JSON 是简历的存储和交换格式。日常修改请使用上面的结构化表单。</p>
+            <button id="refresh-json" class="secondary small-button" type="button">刷新预览</button>
+            <textarea id="json-preview" rows="18" readonly spellcheck="false" aria-label="JSON 数据预览"></textarea>
+          </div>
+        </details>
+      </section>
+    </form>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="lib/core.js"></script>
+  <script src="lib/profile-schema.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>
