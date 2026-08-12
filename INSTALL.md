@@ -39,7 +39,7 @@
 如果只想下载扩展运行所需文件：
 
 1. 打开 [Releases 页面](https://github.com/ZZDDD/mokahr-autofill-extension/releases/latest)。
-2. 向下滚动到页面底部，在 `Assets` 区域下载 `mokahr-autofill-chrome-edge-v0.7.0.zip`。
+2. 向下滚动到页面底部，在 `Assets` 区域下载 `mokahr-autofill-chrome-edge-v0.7.1.zip`。
 3. 解压后，按照上面的 Chrome 或 Edge 步骤加载解压文件夹。
 
 Release ZIP 同时支持 Chrome 和 Edge。不要直接选择 ZIP 安装，必须先解压。
@@ -80,7 +80,9 @@ Release ZIP 同时支持 Chrome 和 Edge。不要直接选择 ZIP 安装，必�
 
 ### 扩展按钮一直是灰色
 
-确认当前页面是 `jobs.feishu.cn` 或 `mokahr.com` 的申请页，然后刷新申请页再打开扩展。刚升级扩展时，旧标签页必须刷新。
+确认当前页面是 Mokahr / 飞书招聘的简历申请页，然后再打开扩展。除 `jobs.feishu.cn` 和 `mokahr.com` 外，扩展也支持企业自己的招聘域名，例如路径中包含 `/resume/.../apply` 的页面。自定义域名只会在你点击扩展图标后获得当前标签页的临时访问权限，不会获得其他网站的常驻读取权限。
+
+若刚升级扩展，请先在扩展管理页点击“重新加载”，再刷新已经打开的申请页。浏览器内置页面、普通职位列表页及其他 ATS 页面不会启用填写按钮。
 
 ### 填写后有“未匹配”
 

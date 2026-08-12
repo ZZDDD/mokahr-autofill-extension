@@ -41,7 +41,7 @@
 
 看到 `Mokahr Resume Autofill` 就安装成功了。建议把它固定到浏览器工具栏。
 
-备选：只想下载扩展运行文件时，可打开 [Releases](https://github.com/ZZDDD/mokahr-autofill-extension/releases/latest)，滚动到页面底部，在 `Assets` 中下载 `mokahr-autofill-chrome-edge-v0.7.0.zip`。解压后用相同方式加载。详细说明和常见问题见 [INSTALL.md](INSTALL.md)。
+备选：只想下载扩展运行文件时，可打开 [Releases](https://github.com/ZZDDD/mokahr-autofill-extension/releases/latest)，滚动到页面底部，在 `Assets` 中下载 `mokahr-autofill-chrome-edge-v0.7.1.zip`。解压后用相同方式加载。详细说明和常见问题见 [INSTALL.md](INSTALL.md)。
 
 扩展是原生 Manifest V3 项目，日常使用不需要构建，也不需要安装 npm 依赖。
 
@@ -56,7 +56,7 @@
 
 ### 3. 填写申请页
 
-1. 打开 `*.jobs.feishu.cn` 或 `*.mokahr.com` 的职位申请页。
+1. 打开 Mokahr / 飞书招聘的职位申请页；支持官方域名及企业自定义招聘域名。
 2. 等页面表单出现后点击扩展图标。
 3. 点击“填充当前页面”。
 4. 检查已填内容、未匹配项和招聘页必填项。
@@ -68,7 +68,7 @@
 
 一个本地运行的 Chrome / Edge 扩展，用同一份结构化简历填充不同公司的 Mokahr 与飞书招聘申请页。扩展只负责填写，不会自动提交申请。
 
-> 当前版本：`0.7.0`。项目仍处于早期阶段，招聘网站改版或租户自定义字段可能导致部分内容无法匹配，提交前必须人工检查。
+> 当前版本：`0.7.1`。项目仍处于早期阶段，招聘网站改版或租户自定义字段可能导致部分内容无法匹配，提交前必须人工检查。
 
 ## ✨ 功能
 
@@ -134,6 +134,7 @@ cp -R skills/mokahr-profile-json "${CODEX_HOME:-$HOME/.codex}/skills/"
 | `storage` | 保存结构化资料、状态和附件 |
 | `unlimitedStorage` | 避免较大附件超过默认扩展存储配额 |
 | `downloads` | 导出 JSON 并记录浏览器返回的保存路径 |
+| `activeTab` + `scripting` | 点击扩展时，临时识别并接入当前企业自定义域名的申请页 |
 | 招聘站点访问权限 | 在 Mokahr / 飞书申请页读取和填写表单 |
 
 请勿在公用电脑保存简历。移除扩展或清除扩展数据前，先导出需要保留的 JSON。仓库的 `.gitignore` 已覆盖常见简历文件和页面快照命名，但提交前仍应自行检查暂存内容。
@@ -161,7 +162,7 @@ npm run package
 
 - 招聘网站 DOM、组件行为或字段路径变化后，匹配逻辑可能需要更新。
 - 公司自定义字段、下拉选项和地区名称不一致时，部分项目会显示为“未匹配”。
-- 扩展只支持清单中声明的 Mokahr / 飞书域名，不处理其他 ATS。
+- 扩展支持 Mokahr / 飞书官方域名和可识别的企业自定义申请域名，不处理其他 ATS。
 - 自动填充不能替代人工核对，尤其是证件、联系方式、日期和经历顺序。
 - PDF 转 JSON 的质量取决于 PDF 文本层或 OCR 质量，生成结果必须复核。
 
