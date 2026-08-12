@@ -2,59 +2,44 @@
 
 这份说明适合第一次安装浏览器扩展的用户。整个过程不需要编程，也不需要运行命令。
 
-## 第一步：下载安装包
+## 推荐：直接下载仓库
 
-1. 打开项目的 [Releases 页面](https://github.com/ZZDDD/mokahr-autofill-extension/releases/latest)。
-2. 找到最新版本，在页面下方展开 `Assets`。
-3. 下载名称类似 `mokahr-autofill-chrome-edge-v0.7.0.zip` 的文件；它同时支持 Chrome 和 Edge。
-4. 不要下载 `Source code (zip)`、`Source code (tar.gz)` 或来源不明的 `.crx`，它们不是这里推荐的新手安装方式。
+1. 打开[项目首页](https://github.com/ZZDDD/mokahr-autofill-extension)。
+2. 点击绿色的 `Code` 按钮。
+3. 点击 `Download ZIP`。也可以[直接点击这里下载](https://github.com/ZZDDD/mokahr-autofill-extension/archive/refs/heads/main.zip)。
+4. 解压下载的 ZIP，得到 `mokahr-autofill-extension-main` 文件夹。
 
-## 第二步：解压
+## 在浏览器中加载
 
-找到下载的 ZIP，右键选择“全部解压”或双击解压。把解压后的文件夹放在固定位置，例如“文档”目录。
+把解压后的文件夹放在固定位置，例如“文档”目录。安装后不要移动或删除它。
 
-以后浏览器仍会从这个文件夹加载扩展，所以安装完成后不要移动或删除它。浏览器不能直接安装这个 ZIP，必须先完整解压。
+### Chrome
 
-打开解压后的文件夹，应当能直接看到这些文件：
+1. 地址栏输入 `chrome://extensions` 并按回车。
+2. 打开右上角“开发者模式”。
+3. 点击“加载已解压的扩展程序”。
+4. 选择 `mokahr-autofill-extension-main` 文件夹。
 
-```text
-manifest.json
-content.js
-popup.html
-options.html
-```
+### Edge
 
-如果打开后只有另一个同名文件夹，请继续进入下一层，直到能看到 `manifest.json`。安装时要选择这一层文件夹。
+1. 地址栏输入 `edge://extensions` 并按回车。
+2. 打开“开发人员模式”。
+3. 点击“加载解压缩的扩展”。
+4. 选择 `mokahr-autofill-extension-main` 文件夹。
 
-可选：想确认下载文件完整时，同时下载 `SHA256SUMS.txt`，在这两个文件所在目录运行：
+看到 `Mokahr Resume Autofill` 就安装成功了。Chrome 和 Edge 选择一个安装即可。
 
-```bash
-shasum -a 256 -c SHA256SUMS.txt
-```
+## 备选：下载 Release 精简包
 
-看到 `OK` 表示安装包与 Release 上传时一致。不熟悉命令行可以跳过这一步。
+如果只想下载扩展运行所需文件：
 
-## 第三步：在 Chrome 安装
+1. 打开 [Releases 页面](https://github.com/ZZDDD/mokahr-autofill-extension/releases/latest)。
+2. 向下滚动到页面底部，在 `Assets` 区域下载 `mokahr-autofill-chrome-edge-v0.7.0.zip`。
+3. 解压后，按照上面的 Chrome 或 Edge 步骤加载解压文件夹。
 
-1. 打开 Chrome。
-2. 在地址栏输入 `chrome://extensions` 并按回车。
-3. 打开右上角的“开发者模式”。
-4. 点击左上角“加载已解压的扩展程序”。
-5. 选择上一步确认含有 `manifest.json` 的文件夹。
-6. 页面出现 `Mokahr Resume Autofill` 卡片即安装成功。
+Release ZIP 同时支持 Chrome 和 Edge。不要直接选择 ZIP 安装，必须先解压。
 
-## 第四步：在 Edge 安装
-
-1. 打开 Edge。
-2. 在地址栏输入 `edge://extensions` 并按回车。
-3. 打开左侧或页面上的“开发人员模式”。
-4. 点击“加载解压缩的扩展”。
-5. 选择含有 `manifest.json` 的文件夹。
-6. 页面出现 `Mokahr Resume Autofill` 卡片即安装成功。
-
-Chrome 和 Edge 只需选择一种安装，不需要两边都装。
-
-## 第五步：准备简历资料
+## 准备简历资料
 
 1. 点击浏览器工具栏右侧的扩展图标。若看不到，先点击拼图图标，再把 `Mokahr Resume Autofill` 固定到工具栏。
 2. 点击“管理资料与附件”。
@@ -64,7 +49,7 @@ Chrome 和 Edge 只需选择一种安装，不需要两边都装。
 
 已有本扩展兼容的 JSON 时，也可以点击“导入 JSON”。导入后请检查页面显示的姓名、经历条数和日期是否正确。
 
-## 第六步：自动填写
+## 自动填写
 
 1. 打开 Mokahr 或飞书招聘的职位申请页面。
 2. 等申请表单加载出来。
@@ -77,7 +62,7 @@ Chrome 和 Edge 只需选择一种安装，不需要两边都装。
 ## 升级新版本
 
 1. 建议先在管理页“导出 JSON”备份资料。
-2. 下载并解压新的 Release 安装包，覆盖原扩展文件夹，或解压到新的固定文件夹。
+2. 重新下载仓库 ZIP 或新的 Release 精简包并解压，覆盖原扩展文件夹，或解压到新的固定文件夹。
 3. 打开 `chrome://extensions` 或 `edge://extensions`。
 4. 在扩展卡片上点击“重新加载”。如果换了文件夹，先移除旧扩展，再用新文件夹“加载已解压的扩展程序”。
 5. 刷新已经打开的招聘申请页。

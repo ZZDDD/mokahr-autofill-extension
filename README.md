@@ -19,17 +19,17 @@
 
 ### 1. 安装扩展
 
-最简单的安装方式是 Chrome Web Store 或 Microsoft Edge Add-ons 商店的一键安装和自动更新。项目目前尚未上架商店，因此请暂时使用下面的 GitHub Release 安装包；不要安装来源不明的 `.crx` 文件。
+推荐直接下载整个仓库，步骤最少：
 
-1. 打开 [Releases 页面](https://github.com/ZZDDD/mokahr-autofill-extension/releases/latest)。
-2. 在 `Assets` 中下载 `mokahr-autofill-chrome-edge-v0.7.0.zip`，同一个文件同时支持 Chrome 和 Edge。不要下载 GitHub 自动生成的 `Source code`。
-3. 将 ZIP 完整解压到一个不会随手删除的文件夹。不能直接选择 ZIP 文件安装。
-4. Chrome 在地址栏输入 `chrome://extensions`；Edge 输入 `edge://extensions`。
-5. 打开页面上的“开发者模式”开关。
-6. 点击“加载已解压的扩展程序”，选择刚刚解压、里面能直接看到 `manifest.json` 的文件夹。
-7. 浏览器出现 `Mokahr Resume Autofill` 后即安装成功，建议把它固定到工具栏。
+1. 点击仓库首页绿色的 `Code` 按钮，再点 `Download ZIP`。也可以[直接下载仓库 ZIP](https://github.com/ZZDDD/mokahr-autofill-extension/archive/refs/heads/main.zip)。
+2. 解压 ZIP。
+3. Chrome 打开 `chrome://extensions`；Edge 打开 `edge://extensions`。
+4. 开启“开发者模式”，点击“加载已解压的扩展程序”。
+5. 选择解压得到的 `mokahr-autofill-extension-main` 文件夹。
 
-若“加载已解压的扩展程序”后报错，通常是选错了目录。请进入解压后的文件夹，确认 `manifest.json` 与 `content.js` 在当前这一层，再重新选择该文件夹。更详细的逐步说明见 [INSTALL.md](INSTALL.md)。
+看到 `Mokahr Resume Autofill` 就安装成功了。建议把它固定到浏览器工具栏。
+
+备选：只想下载扩展运行文件时，可打开 [Releases](https://github.com/ZZDDD/mokahr-autofill-extension/releases/latest)，滚动到页面底部，在 `Assets` 中下载 `mokahr-autofill-chrome-edge-v0.7.0.zip`。解压后用相同方式加载。详细说明和常见问题见 [INSTALL.md](INSTALL.md)。
 
 扩展是原生 Manifest V3 项目，日常使用不需要构建，也不需要安装 npm 依赖。
 
