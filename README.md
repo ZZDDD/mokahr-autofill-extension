@@ -19,13 +19,17 @@
 
 ### 1. 安装扩展
 
-本项目暂未发布到浏览器商店，请使用开发者模式加载：
+最简单的安装方式是 Chrome Web Store 或 Microsoft Edge Add-ons 商店的一键安装和自动更新。项目目前尚未上架商店，因此请暂时使用下面的 GitHub Release 安装包；不要安装来源不明的 `.crx` 文件。
 
-1. 下载或克隆本仓库。
-2. Chrome 打开 `chrome://extensions`；Edge 打开 `edge://extensions`。
-3. 开启“开发者模式”。
-4. 点击“加载已解压的扩展程序”，选择本仓库根目录。
-5. 建议将 `Mokahr Resume Autofill` 固定到浏览器工具栏。
+1. 打开 [Releases 页面](https://github.com/ZZDDD/mokahr-autofill-extension/releases/latest)。
+2. 在 `Assets` 中下载 `mokahr-autofill-chrome-edge-v0.7.0.zip`，同一个文件同时支持 Chrome 和 Edge。不要下载 GitHub 自动生成的 `Source code`。
+3. 将 ZIP 完整解压到一个不会随手删除的文件夹。不能直接选择 ZIP 文件安装。
+4. Chrome 在地址栏输入 `chrome://extensions`；Edge 输入 `edge://extensions`。
+5. 打开页面上的“开发者模式”开关。
+6. 点击“加载已解压的扩展程序”，选择刚刚解压、里面能直接看到 `manifest.json` 的文件夹。
+7. 浏览器出现 `Mokahr Resume Autofill` 后即安装成功，建议把它固定到工具栏。
+
+若“加载已解压的扩展程序”后报错，通常是选错了目录。请进入解压后的文件夹，确认 `manifest.json` 与 `content.js` 在当前这一层，再重新选择该文件夹。更详细的逐步说明见 [INSTALL.md](INSTALL.md)。
 
 扩展是原生 Manifest V3 项目，日常使用不需要构建，也不需要安装 npm 依赖。
 
@@ -116,7 +120,13 @@ npm run check
 
 `npm run check` 会执行 JavaScript 语法检查、示例 JSON 校验和自动化测试。测试覆盖反向更新实时同步、重复条目创建、React 延迟覆盖修复、日期规范化、页面反向读取及关键 UI 状态。
 
-修改源码后，在扩展管理页面点击“重新加载”，并刷新目标申请页。扩展没有打包步骤。
+修改源码后，在扩展管理页面点击“重新加载”，并刷新目标申请页。生成可分发 ZIP：
+
+```bash
+npm run package
+```
+
+产物写入 `dist/`，打包脚本采用运行文件白名单并同时生成 SHA-256 校验文件，不会包含测试、Git 历史、Skill、本地简历或页面快照。
 
 ## 已知限制
 
