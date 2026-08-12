@@ -12,6 +12,23 @@
 >
 > **[⬇️ 点击直接下载仓库 ZIP](https://github.com/ZZDDD/mokahr-autofill-extension/archive/refs/heads/main.zip)**
 
+## 👀 一眼看懂
+
+打开插件小窗，一键填写当前招聘页；所有资料都可以先在可视化管理页中维护、导入和导出。
+
+<table>
+  <tr>
+    <td width="32%" align="center">
+      <strong>插件小窗</strong><br><br>
+      <img src="docs/images/popup-teaser.png" alt="Mokahr Autofill 插件小窗，可填写当前页面或从页面反向更新资料" width="350">
+    </td>
+    <td width="68%" align="center">
+      <strong>可视化简历管理</strong><br><br>
+      <img src="docs/images/options-teaser.png" alt="Mokahr Autofill 可视化简历管理界面，展示虚构示例资料">
+    </td>
+  </tr>
+</table>
+
 ### 1. 安装扩展
 
 推荐直接下载整个仓库，步骤最少：

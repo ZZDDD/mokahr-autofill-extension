@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "test": "node --test",
-    "check": "node --check content.js && node --check popup.js && node --check options.js && node --check scripts/package-extension.js && node --check skills/mokahr-profile-json/scripts/validate_profile_json.js && node skills/mokahr-profile-json/scripts/validate_profile_json.js examples/profile.example.json && node --test",
-    "package": "node scripts/package-extension.js"
+    "check": "node --check content.js && node --check popup.js && node --check options.js && node --check scripts/package-extension.js && node --check scripts/render-teasers.js && node --check skills/mokahr-profile-json/scripts/validate_profile_json.js && node skills/mokahr-profile-json/scripts/validate_profile_json.js examples/profile.example.json && node --test",
+    "package": "node scripts/package-extension.js",
+    "screenshots": "node scripts/render-teasers.js"
   },
   "devDependencies": {
     "jsdom": "^30.0.1"
